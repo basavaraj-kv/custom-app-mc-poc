@@ -6,7 +6,6 @@ import Link from '@commercetools-uikit/link';
 import Grid from '@commercetools-uikit/grid';
 import * as XLSX from "xlsx";
 import { useState } from 'react';
-import DataTable from '@commercetools-uikit/data-table';
 
 const New = () => {
     const [data, setData] = useState([]);
@@ -38,41 +37,8 @@ const New = () => {
                 accept='.xlsx, .xls'
                 onChange={handleFileUpload}
             />
-            <br />
             {
                 data.length > 0 && console.log(data)
-            }
-            {
-                data.length > 0 && (
-                    <table className='table'>
-                        <thead>
-                            <tr>
-                                {
-                                    Object.keys(data[0]).map((key) => (
-                                        <th key={key}>
-                                            {key}
-                                        </th>
-                                    ))
-                                }
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                data.map((row, index) => (
-                                    <tr key={index}>
-                                        {
-                                            Object.values(row).map((value, index) => (
-                                                <td key={index}>
-                                                    {value}
-                                                </td>
-                                            ))
-                                        }
-                                    </tr>
-                                ))
-                            }
-                        </tbody>
-                    </table>
-                )
             }
             {/* <Text.Body>{'Custom New Page'}</Text.Body>
             <PrimaryButton
@@ -92,7 +58,6 @@ const New = () => {
                 <Grid.Item>{'4'}</Grid.Item>
                 <Grid.Item>{'5'}</Grid.Item>
             </Grid> */}
-            
         </>
     )
 }
