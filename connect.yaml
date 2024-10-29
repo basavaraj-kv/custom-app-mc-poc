@@ -7,14 +7,14 @@ deployAs:
     configuration:
       standardConfiguration:
         - key: CUSTOM_APPLICATION_ID
-          value: 122345665462173abcs
+          value: '122345665462173abcs'
           description: the Custom Application ID
           required: true
         - key: CLOUD_IDENTIFIER
-          value: gcp-us
+          value: 'gcp-us'
           description: The cloud identifier
           default: 'gcp-eu'
         - key: ENTRY_POINT_URI_PATH
-          value: new
+          value: 'new'
           description: The Application entry point URI path
           required: true
