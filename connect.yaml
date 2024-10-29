@@ -1,0 +1,19 @@
+deployAs:
+  - name: mc-poc
+    applicationType: merchant-center-custom-application
+    scripts:
+      postDeploy: npm install && npm run connector:post-deploy
+      preUndeploy: npm install && npm run connector:pre-undeploy
+    configuration:
+      standardConfiguration:
+        - key: CUSTOM_APPLICATION_ID
+          description: the Custom Application ID
+          required: true
+          default: '122345665462173abcs'
+        - key: CLOUD_IDENTIFIER
+          description: The cloud identifier
+          default: 'gcp-us'
+        - key: ENTRY_POINT_URI_PATH
+          description: The Application entry point URI path
+          default: 'new'
+          required: true
