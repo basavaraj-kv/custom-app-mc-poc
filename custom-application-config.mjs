@@ -5,15 +5,15 @@ import { PERMISSIONS, entryPointUriPath } from './src/constants';
  */
 const config = {
   name: 'Home',
-  entryPointUriPath,
+  entryPointUriPath: 'new',
   cloudIdentifier: 'gcp-us',
   env: {
     development: {
       initialProjectKey: 'merchent-center-poc',
     },
     production: {
-      applicationId: 'TODO',
-      url: 'https://your_app_hostname.com',
+      applicationId: '122345665462173abcs',
+      url: 'https://mc.us-central1.gcp.commercetools.com',
     },
   },
   oAuthScopes: {
@@ -22,17 +22,17 @@ const config = {
   },
   icon: '${path:@commercetools-frontend/assets/application-icons/rocket.svg}',
   mainMenuLink: {
-    defaultLabel: 'Template starter',
+    defaultLabel: 'ConfigUI',
     labelAllLocales: [],
     permissions: [PERMISSIONS.View],
   },
   submenuLinks: [
-    {
-      uriPath: 'channels',
-      defaultLabel: 'Channels',
-      labelAllLocales: [],
-      permissions: [PERMISSIONS.View],
-    },
+    // {
+    //   uriPath: 'channels',
+    //   defaultLabel: 'Channels',
+    //   labelAllLocales: [],
+    //   permissions: [PERMISSIONS.View],
+    // },
     {
       uriPath: 'new',
       defaultLabel: 'New Page',
