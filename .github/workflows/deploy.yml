@@ -1,0 +1,43 @@
+name: Build and Deploy Custom Application Connector
+
+on:
+  push:
+    branches:
+      - development  # Specify the branch to trigger the workflow
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'  # Use your required Node.js version
+
+      - name: Install dependencies
+        run: npm install  # or yarn install
+
+      - name: Build application
+        run: npm run build  # Adjust as necessary
+
+      - name: Deploy to Commerce Tools
+        env:
+          CT_API_TOKEN: ${{ secrets.CT_API_TOKEN }}  # Set your API token in secrets
+        run: |
+          # Replace with the command or script to deploy your connector
+          curl -X POST \
+            https://api.your-commmerce-tools-project.com/connectors \
+            -H "Authorization: Bearer $CT_API_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "name": "Your Connector Name",
+              "description": "Description of your connector",
+              "type": "YOUR_CONNECTOR_TYPE",
+              "configuration": {
+                "url": "https://your-connector-url",
+                "other_settings": "value"
+              }
+            }'

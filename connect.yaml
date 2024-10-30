@@ -1,19 +1,33 @@
-deployAs:
-  - name: mc-poc
-    applicationType: merchant-center-custom-application
-    scripts:
-      postDeploy: npm install && npm run connector:post-deploy
-      preUndeploy: npm install && npm run connector:pre-undeploy
-    configuration:
-      standardConfiguration:
-        - key: CUSTOM_APPLICATION_ID
-          description: the Custom Application ID
-          required: true
-          default: '122345665462173abcs'
-        - key: CLOUD_IDENTIFIER
-          description: The cloud identifier
-          default: 'gcp-us'
-        - key: ENTRY_POINT_URI_PATH
-          description: The Application entry point URI path
-          default: 'new'
-          required: true
+# connect.yaml
+
+# Basic information about the connector
+name: Your Connector Name
+description: A brief description of your connector
+version: 1.0.0
+
+# API configuration for Commerce Tools
+api:
+  url: https://mc.us-central1.gcp.commercetools.com/
+  projectKey: merchent-center-poc
+  clientId: AkABtbXX_DejxVcnKV6UcVAK
+  clientSecret: ssbxdS0dgUsjUT5aBr5TYSamrsGCLY9-
+  authUrl: https://auth.us-central1.gcp.commercetools.com
+
+# Webhook configuration
+webhooks:
+  - name: Example Webhook
+    url: https://your-webhook-url.com
+    events:
+      - cart.created
+      - order.created
+    headers:
+      Authorization: Bearer ssbxdS0dgUsjUT5aBr5TYSamrsGCLY9-
+
+# Additional settings
+settings:
+  retryAttempts: 3
+  timeout: 30  # Timeout in seconds
+
+# Optional: Define any additional custom settings or parameters
+customSettings:
+  customKey: customValue
