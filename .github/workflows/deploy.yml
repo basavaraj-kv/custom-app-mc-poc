@@ -18,7 +18,7 @@ jobs:
           node-version: '20'  # Use your required Node.js version
 
       - name: Install dependencies
-        run: npm install  # or yarn install
+        run: npm install --legacy-peer-deps # or yarn install
 
       - name: Build application
         run: npm run build  # Adjust as necessary
