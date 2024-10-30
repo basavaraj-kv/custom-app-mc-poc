@@ -28,16 +28,8 @@ jobs:
           CT_API_TOKEN: ${{ secrets.CT_API_TOKEN }}  # Set your API token in secrets
         run: |
           # Replace with the command or script to deploy your connector
-          curl -X POST \
-            https://api.your-commmerce-tools-project.com/connectors \
-            -H "Authorization: Bearer $CT_API_TOKEN" \
-            -H "Content-Type: application/json" \
-            -d '{
-              "name": "Your Connector Name",
-              "description": "Description of your connector",
-              "type": "YOUR_CONNECTOR_TYPE",
-              "configuration": {
-                "url": "https://your-connector-url",
-                "other_settings": "value"
-              }
-            }'
+          
+curl https://auth.us-central1.gcp.commercetools.com/oauth/token \
+     --basic --user "XtWafEB2FsR7kYyA2BAunjb3:mODT1ZVCIt57zSiccijcDhdTP6BkQKFp" \
+     -X POST \
+     -d "grant_type=client_credentials&scope=manage_project:merchent-center-poc"
