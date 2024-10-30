@@ -27,9 +27,7 @@ jobs:
         env:
           CT_API_TOKEN: ${{ secrets.CT_API_TOKEN }}  # Set your API token in secrets
         run: |
-          # Replace with the command or script to deploy your connector
-          
-curl https://auth.us-central1.gcp.commercetools.com/oauth/token \
-     --basic --user "XtWafEB2FsR7kYyA2BAunjb3:mODT1ZVCIt57zSiccijcDhdTP6BkQKFp" \
-     -X POST \
-     -d "grant_type=client_credentials&scope=manage_project:merchent-center-poc"
+          curl -X POST \
+            https://auth.us-central1.gcp.commercetools.com/oauth/token \
+            --basic --user "XtWafEB2FsR7kYyA2BAunjb3:mODT1ZVCIt57zSiccijcDhdTP6BkQKFp" \
+            -d "grant_type=client_credentials&scope=manage_project:merchent-center-poc"
