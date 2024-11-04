@@ -4,16 +4,16 @@ import { PERMISSIONS, entryPointUriPath } from './src/constants';
  * @type {import('@commercetools-frontend/application-config').ConfigOptionsForCustomApplication}
  */
 const config = {
-  name: 'Home',
-  entryPointUriPath: 'new',
+  name: 'Starter 6fc300',
+  entryPointUriPath,
   cloudIdentifier: 'gcp-us',
   env: {
     development: {
       initialProjectKey: 'merchent-center-poc',
     },
     production: {
-      applicationId: '122345665462173abcs',
-      url: 'https://mc.us-central1.gcp.commercetools.com',
+      applicationId: 'cm32vwrus0001qvryrbkb28av',
+      url: 'https://mc.us-central1.gcp.commercetools.com/merchent-center-poc/home/new',
     },
   },
   oAuthScopes: {

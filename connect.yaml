@@ -23,6 +23,27 @@ api:
 #     headers:
 #       Authorization: Bearer ssbxdS0dgUsjUT5aBr5TYSamrsGCLY9-
 
+deployAs:
+  - name: mc-poc
+    applicationType: merchant-center-custom-application
+    scripts:
+      postDeploy: npm install && npm run connector:post-deploy
+      preUndeploy: npm install && npm run connector:pre-undeploy
+    configuration:
+      standardConfiguration:
+        - key: CUSTOM_APPLICATION_ID
+          value: 'cm32vwrus0001qvryrbkb28av'
+          description: the Custom Application ID
+          required: true
+        - key: CLOUD_IDENTIFIER
+          value: 'gcp-us'
+          description: The cloud identifier
+          default: 'gcp-us'
+        - key: ENTRY_POINT_URI_PATH
+          value: 'new'
+          description: The Application entry point URI path
+          required: true
+
 # Additional settings
 settings:
   retryAttempts: 3
