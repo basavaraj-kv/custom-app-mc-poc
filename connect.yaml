@@ -9,19 +9,19 @@ version: 1.0.0
 api:
   url: https://mc.us-central1.gcp.commercetools.com/
   projectKey: merchent-center-poc
-  clientId: AkABtbXX_DejxVcnKV6UcVAK
-  clientSecret: ssbxdS0dgUsjUT5aBr5TYSamrsGCLY9-
+  clientId: Uv1wLx4dszphwXTBh0dVbfQ4
+  clientSecret: O35tWAX3Vg-qgxJ8liYZmELGlFXIOhgL
   authUrl: https://auth.us-central1.gcp.commercetools.com
 
-# Webhook configuration
-webhooks:
-  - name: Example Webhook
-    url: https://your-webhook-url.com
-    events:
-      - cart.created
-      - order.created
-    headers:
-      Authorization: Bearer ssbxdS0dgUsjUT5aBr5TYSamrsGCLY9-
+# # Webhook configuration
+# webhooks:
+#   - name: Example Webhook
+#     url: https://your-webhook-url.com
+#     events:
+#       - cart.created
+#       - order.created
+#     headers:
+#       Authorization: Bearer ssbxdS0dgUsjUT5aBr5TYSamrsGCLY9-
 
 # Additional settings
 settings:
