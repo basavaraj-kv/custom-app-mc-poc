@@ -1,16 +1,32 @@
-import Text from '@commercetools-uikit/text';
-import PrimaryButton from '@commercetools-uikit/primary-button';
-import { InformationIcon } from '@commercetools-uikit/icons';
-import LoadingSpinner from '@commercetools-uikit/loading-spinner';
-import Link from '@commercetools-uikit/link';
-import Grid from '@commercetools-uikit/grid';
 import * as XLSX from "xlsx";
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import DataTable from "@commercetools-uikit/data-table";
 
 const New = () => {
     const [data, setData] = useState([]);
+    const [columns, setColumns] = useState([]);
 
-    const handleFileUpload = (e) => {
+    let arr1 = [];
+
+    const divStyle = {
+        overflow: 'auto'
+    }
+
+    const publishMessage = async (topic, message) => {
+        try {
+            const response = await axios.post('http://localhost:8080/publish', {
+                topic,
+                message,
+            });
+            alert(response.data);
+        } catch (error) {
+            console.error('Error publishing message:', error);
+            alert('Error publishing message.');
+        }
+    };
+
+    const handleFileUpload = async (e) => {
         const reader = new FileReader();
         if (!!e.target.files[0]) {
             reader.readAsBinaryString(e.target.files[0]);
@@ -25,7 +41,27 @@ const New = () => {
         } else {
             setData([]);
         }
+        let pubsubresponse = await publishMessage('testRanga', 'Test message!');
     }
+
+    useEffect(() => {
+        console.log('1');
+
+        data.length > 0 &&
+            Object.keys(data[0]).forEach((key) => (
+                arr1.push(key)
+            ))
+        console.log('2', arr1);
+
+        const columns = arr1?.map(key => ({
+            key: key,
+            label: key
+        }));
+
+        setColumns(columns);
+
+    }, [data]);
+
     return (
 
         <>
@@ -40,6 +76,41 @@ const New = () => {
             {
                 data.length > 0 && console.log(data)
             }
+            {
+                data.length > 0 && <div style={divStyle}><br/><DataTable columns={columns} rows={data} /></div>
+            }
+            {/* {
+                data.length > 0 && (
+                    <table className=''>
+                        <thead>
+                            <tr>
+                                {
+                                    Object.keys(data[0]).map((key) => (
+                                        <th key={key}>
+                                            {key}
+                                        </th>
+                                    ))
+                                }
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                data.map((row, index) => (
+                                    <tr key={index}>
+                                        {
+                                            Object.values(row).map((value, index) => (
+                                                <td key={index}>
+                                                    {value}
+                                                </td>
+                                            ))
+                                        }
+                                    </tr>
+                                ))
+                            }
+                        </tbody>
+                    </table>
+                )
+            } */}
             {/* <Text.Body>{'Custom New Page'}</Text.Body>
             <PrimaryButton
                 iconLeft={<InformationIcon />}

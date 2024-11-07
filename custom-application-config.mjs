@@ -34,8 +34,14 @@ const config = {
     //   permissions: [PERMISSIONS.View],
     // },
     {
+      uriPath: 'sample',
+      defaultLabel: 'Sample Example',
+      labelAllLocales: [],
+      permissions: [PERMISSIONS.View],
+    },
+    {
       uriPath: 'new',
-      defaultLabel: 'New Page',
+      defaultLabel: 'Excel Example',
       labelAllLocales: [],
       permissions: [PERMISSIONS.View],
     },
