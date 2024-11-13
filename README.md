@@ -18,3 +18,8 @@ npm install --legacy-peer-deps
 # Run the server in local
 
 npm start
+
+# Configure the Project Name
+
+Update initialProjectKey with Project Key[name of the project created in CommerceTools] in custom-application-config.mjs file.
+Update the Project Key in 2 files(1. src\components\custom-objects\create-custom-object.js and 2. src\components\custom-objects\custom-object.js) where we are using axiosHandler
