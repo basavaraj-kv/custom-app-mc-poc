@@ -5,6 +5,7 @@ import Welcome from './components/welcome';
 import New from './components/new/new'
 import Sample from './components/new/Sample';
 
+import CustomObjects from './components/custom-objects/custom-object';
 const ApplicationRoutes = () => {
   const match = useRouteMatch();
 
@@ -30,6 +31,9 @@ const ApplicationRoutes = () => {
         </Route>
         <Route path={`${match.path}/sample`}>
           <Sample />
+          </Route>
+        <Route path={`${match.path}/custom-object`}>
+          <CustomObjects />
         </Route>
         <Route>
           <Welcome />
