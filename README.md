@@ -19,6 +19,10 @@ npm install --legacy-peer-deps
 
 npm start
 
+# Build the application for Production
+
+npm run build
+
 # Configure the Project Name
 
 - Update initialProjectKey with Project Key[name of the project created in CommerceTools] in custom-application-config.mjs file.
