@@ -7,10 +7,14 @@
 
 A starter template to [develop Custom Applications](https://docs.commercetools.com/merchant-center-customizations/custom-applications) for the Merchant Center.
 
-# Installing the template
+# Installing Node JS
 
-Read the [Getting started](https://docs.commercetools.com/merchant-center-customizations/custom-applications) documentation for more information.
+Install Node JS Version 20 or above
 
-# Developing the Custom Application
+# Installing the dependencies
 
-Learn more about [developing a Custom Application](https://docs.commercetools.com/merchant-center-customizations/development) and [how to use the CLI](https://docs.commercetools.com/merchant-center-customizations/api-reference/cli).
+npm install --legacy-peer-deps
+
+# Run the server in local
+
+npm start
