@@ -45,6 +45,12 @@ const config = {
       labelAllLocales: [],
       permissions: [PERMISSIONS.View],
     },
+    {
+      uriPath: 'custom-object',
+      defaultLabel: 'Custom Object Example',
+      labelAllLocales: [],
+      permissions: [PERMISSIONS.View],
+    },
   ],
 };
 
