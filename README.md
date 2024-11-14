@@ -27,4 +27,5 @@ npm run build
 
 - Update <b>initialProjectKey</b> with Project Key[name of the project created in CommerceTools] in custom-application-config.mjs file.
   
-  ![image](https://github.com/user-attachments/assets/0b53f816-bb94-4f72-b3fe-758b881028ae)
+  ![image](https://github.com/user-attachments/assets/c435d288-09d0-4db9-ab0f-0e3c49084289)
+
