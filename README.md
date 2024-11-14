@@ -11,8 +11,6 @@ A starter template to [develop Custom Applications](https://docs.commercetools.c
 The below command will clone development branch:
 git clone --branch development https://github.com/basavaraj-kv/custom-app-mc-poc.git
 
-Install Node JS Version 20 or above
-
 # Installing Node JS
 
 Install Node JS Version 20 or above
