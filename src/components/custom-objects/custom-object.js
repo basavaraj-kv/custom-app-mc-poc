@@ -39,7 +39,7 @@ const CustomObjects = () => {
     async function execute() {
       console.log("fetch")
       try {
-        const data = await axioHandler(`/${config.env.development.initialProjectKey}/custom-objects/Test5`, { method: 'get' })
+        const data = await axioHandler(`/${config.env.development.initialProjectKey}/custom-objects`, { method: 'get' })
         console.log(data)
         if (data && data.total > 0) {
           setcustomObjects(data)

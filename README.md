@@ -6,6 +6,10 @@
 </p>
 
 A starter template to [develop Custom Applications](https://docs.commercetools.com/merchant-center-customizations/custom-applications) for the Merchant Center.
+# Clone the repository
+
+The below command will clone development branch:
+git clone --branch development https://github.com/basavaraj-kv/custom-app-mc-poc.git
 
 # Installing Node JS
 
@@ -26,4 +30,6 @@ npm run build
 # Configure the Project Name
 
 - Update <b>initialProjectKey</b> with Project Key[name of the project created in CommerceTools] in custom-application-config.mjs file.
-- Update the Project Key in 2 files(<b>1. src\components\custom-objects\create-custom-object.js and 2. src\components\custom-objects\custom-object.js</b>) where we are using axiosHandler
+  
+  ![image](https://github.com/user-attachments/assets/c435d288-09d0-4db9-ab0f-0e3c49084289)
+
