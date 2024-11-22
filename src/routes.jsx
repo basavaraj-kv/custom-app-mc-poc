@@ -4,8 +4,9 @@ import Channels from './components/channels';
 import Welcome from './components/welcome';
 import New from './components/new/new'
 import Sample from './components/new/Sample';
-
 import CustomObjects from './components/custom-objects/custom-object';
+import CustomObjectsContainer from './components/custom-objects/CustomObjectsContainer';
+
 const ApplicationRoutes = () => {
   const match = useRouteMatch();
 
@@ -31,10 +32,13 @@ const ApplicationRoutes = () => {
         </Route>
         <Route path={`${match.path}/sample`}>
           <Sample />
-          </Route>
+        </Route>
         <Route path={`${match.path}/custom-object`}>
           <CustomObjects />
         </Route>
+        <Route path={`${match.path}/custom-object-with-container`}>
+          <CustomObjectsContainer />
+        </Route>``
         <Route>
           <Welcome />
         </Route>
